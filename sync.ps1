@@ -8,22 +8,12 @@ $skillsSrc = Join-Path $repoRoot "skills"
 
 $allSkills = Get-ChildItem -LiteralPath $skillsSrc -Directory | Select-Object -ExpandProperty Name
 
-# Curated subset for Antigravity to keep prompt context lean
-$antigravitySkills = @(
-    'council',
-    'file-pr',
-    'frontend-design',
-    'full-send',
-    'full-stop',
-    'gemini-loop',
-    'learn',
-    'leaving-pr-comments',
-    'modernize',
-    'security-audit',
-    'sol-loop',
-    'sum',
-    'verify-assignment'
+# Exclude client-specific skills from Antigravity to keep prompt context focused
+$antigravityExclude = @(
+    'client-tests',
+    'ship-readiness'
 )
+$antigravitySkills = $allSkills | Where-Object { $_ -notin $antigravityExclude }
 
 function Sync-SkillSet {
     param(
@@ -64,6 +54,16 @@ Sync-SkillSet -TargetDir $claudeDir -SkillNames $allSkills
 Sync-SkillSet -TargetDir $codexDir -SkillNames $allSkills
 Sync-SkillSet -TargetDir $agySkillsDir -SkillNames $antigravitySkills
 
+$t3AgyRoot = Join-Path $HOME ".t3\userdata\providers\antigravity"
+$t3AgyTargets = @()
+if (Test-Path -LiteralPath $t3AgyRoot) {
+    foreach ($providerDir in (Get-ChildItem -LiteralPath $t3AgyRoot -Directory)) {
+        $t3SkillsDir = Join-Path $providerDir.FullName "config\skills"
+        Sync-SkillSet -TargetDir $t3SkillsDir -SkillNames $antigravitySkills
+        $t3AgyTargets += $t3SkillsDir
+    }
+}
+
 $pluginJsonPath = Join-Path $agyPluginDir "plugin.json"
 if (-not (Test-Path -LiteralPath $pluginJsonPath)) {
     @'
@@ -88,4 +88,7 @@ Write-Output "Done ($mode):"
 Write-Output "  Claude:      $($allSkills.Count) skills -> $claudeDir"
 Write-Output "  Codex:       $($allSkills.Count) skills -> $codexDir"
 Write-Output "  Antigravity: $($antigravitySkills.Count) skills -> $agySkillsDir"
+foreach ($t3Dir in $t3AgyTargets) {
+    Write-Output "  T3 Gemini:   $($antigravitySkills.Count) skills -> $t3Dir"
+}
 Write-Output "  Rules:       $geminiRulesDst"
