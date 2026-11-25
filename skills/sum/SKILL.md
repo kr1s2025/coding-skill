@@ -1,6 +1,6 @@
 ---
 name: sum
-description: Rewrite the answer Claude just gave in this conversation as a much shorter, easier-to-read version - one line with the answer, then a few bullets or steps, with commands, numbers and open questions kept exact. Use whenever the user runs /sum, says the last answer is too long or too much text, or asks to summarize, sum up or shorten it (also misspelled, like "sumeryze" or "sumarize"), or says "tl;dr", "short version", "korter", "vat samen", "te veel tekst". Only for an answer already given in this conversation. Not for summarizing a file, PDF, article or video the user shares.
+description: Use for /sum, or when the user asks to shorten, summarize, simplify, or tl;dr an answer ("too long", "make it shorter", "korter").
 argument-hint: "[optional: what to focus on, or which answer]"
 ---
 
@@ -25,10 +25,12 @@ If you notice the original answer was wrong, keep the summary faithful and add o
 
 Scale with the original, and stay under about a quarter of its length:
 
+
 - **A few lines:** one sentence is enough.
 - **A short answer (up to about 10 lines):** one sentence, then at most 3 bullets.
 - **About a screen:** one sentence, then 4 to 6 bullets.
 - **Long, with several sections:** one sentence, then the steps or points (at most about 8), then 2 or 3 takeaways.
+
 
 ## Shape
 

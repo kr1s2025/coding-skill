@@ -1,6 +1,8 @@
 ---
 name: unslop
-description: Cut AI tells from any writing.
+description: "Use only when drafting or editing reader-facing documents (school work,
+    reports, READMEs, docs, emails) meant for other people. Skip for normal chat replies
+    to the user."
 ---
 
 # Unslop
