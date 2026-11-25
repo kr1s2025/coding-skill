@@ -39,4 +39,50 @@ Interpret creatively and make unexpected choices that feel genuinely designed fo
 
 **IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
 
-Remember: Claude is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.
+Remember: Codex is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.
+
+## unslop
+
+**important** It is important to not use these elements in your front-end disgn. These elements make the ui look low quality and low effort avoid these disgn choises / elements at all times.
+rules:
+
+- gradiend blobs
+- Circle icons
+- over use of the color purple
+- floating 3D schapes that are clusterd together 
+- identical feature cards
+- stock team fotos
+- rainbow accent colours
+- Over use of Buzzwords in the copy write of the product
+- generic testimonials that have no character and no personality 
+- 3-words headlines
+- restating faq's in the answer
+- bento grids
+- cookie cuter flow whit no personality, brand identity or originality
+- emoji bullet / emoji's with bullet points
+- vague CTA's whit no clear thing
+- dead footer links
+- over use of soft corner radius you may use it but no over use
+- harsh gradients
+- lucid icons
+- pure white backgrounds unless explicitly asked
+- rainbow coloring
+- over use of drop shadow you may use it but no over use
+- 3 feature cards in a row
+- liquid glas
+- em dashes
+- inter/geist/space grotesk
+- colourd left strips in title cards or feature cards
+- it's not x, it's y copy on the page
+- checkmark bullets
+- no skeleton loaders
+- radial orbs
+- dot grids
+- sparkle icons
+- animated arrows
+- the use of eyebrows
+- little dots in between tekst
+- cream backgrounds
+- one italic word in the headline
+- the over use of cards you may use it but no over use
+- pulsing dots
